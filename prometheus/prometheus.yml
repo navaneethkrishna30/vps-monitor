@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s # How frequently to scrape targets by default.
+
+scrape_configs:
+  - job_name: 'pushgateway'
+    # Scrape metrics pushed to the Pushgateway.
+    honor_labels: true # Preserve labels pushed by clients.
+    static_configs:
+      - targets: ['pushgateway:9091']
